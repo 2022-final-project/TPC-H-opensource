@@ -6,8 +6,7 @@ CREATE TABLES, INSERT DATAS, Query Optimization 을 진행한다.
 
 첨부된 File 들은 postgreSQL 환경에서 사용할 수 있도록 수정이 된 Open source 이다.
 
-|-----|
 |문제점|
 |-----|
 |22개의 쿼리에는 postgreSQL에서 실행할 수 없는 형태의 쿼리들이 담겨있다|
-|-----|
+
