@@ -25,32 +25,54 @@ CREATE TABLES, INSERT DATAS, Query Optimization 을 진행한다.
       
   와 같이 수정
   
-root# make
+> root# make
 
-root# ./dbgen -s 10
+> root# ./dbgen -s 10
 
       뒤 숫자의 크기로 Data 들의 개수를 정할 수 있다.
       
-root# for i in `ls *.tbl`; do sed 's/|$//' $i > ${i/tbl/csv}; echo $i; done
+> root# for i in `ls *.tbl`; do sed 's/|$//' $i > ${i/tbl/csv}; echo $i; done
 
       "*.tbl" 파일들을 "*csv" 파일로 변경하면서 가장 마지막 Delimiter 인 | 를 제거한다.
       
-root# su postgres
+> root# su postgres
 
-postgres# createdb tpch
+> postgres# createdb tpch
 
-postgres# git clone https://github.com/tvondra/pg_tpch.git
+> postgres# git clone https://github.com/tvondra/pg_tpch.git
 
-postgres# cd dss
+> postgres# cd pg_tpch/dss
       
       방금 깃클론 사이트에 들어가보면 pg_tpch/dss directory 가 있다.
       
-postgres# psql tpch < tpch-create.sql
+> postgres# psql tpch < tpch-create.sql
 
       8개의 테이블들을 생성한다.
       
-postgres# psql -d tpch
+> postgres# psql -d tpch
 
       postgres 상에 진입하게 된다.
+      
+## 8개의 Table 들에 Data 들을 INSERT
 
-psql$ 
+> psql$ COPY part FROM '/절대경로/TPC-H_Tools_v3.0.0/dbgen/part.csv' WITH (FORMAT csv, DELIMITER '|');
+
+> psql$ COPY region FROM '/절대경로/TPC-H_Tools_v3.0.0/dbgen/region.csv' WITH (FORMAT csv, DELIMITER '|');
+
+> psql$ COPY nation FROM '/절대경로/TPC-H_Tools_v3.0.0/dbgen/nation.csv' WITH (FORMAT csv, DELIMITER '|');
+
+> psql$ COPY supplier FROM '/절대경로/TPC-H_Tools_v3.0.0/dbgen/supplier.csv' WITH (FORMAT csv, DELIMITER '|');
+
+> psql$ COPY customer FROM '/절대경로/TPC-H_Tools_v3.0.0/dbgen/customer.csv' WITH (FORMAT csv, DELIMITER '|');
+
+> psql$ COPY partsupp FROM '/절대경로/TPC-H_Tools_v3.0.0/dbgen/partsupp.csv' WITH (FORMAT csv, DELIMITER '|');
+
+> psql$ COPY orders FROM '/절대경로/TPC-H_Tools_v3.0.0/dbgen/orders.csv' WITH (FORMAT csv, DELIMITER '|');
+
+> psql$ COPY lineitem FROM '/절대경로/TPC-H_Tools_v3.0.0/dbgen/lineitem.csv' WITH (FORMAT csv, DELIMITER '|');
+
+> PRESS ctrl + z
+
+> postgres# psql tpch < tpch-pkeys.sql
+
+> postgres# psql tpch < tpch-alter.sql
