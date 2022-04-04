@@ -15,8 +15,10 @@ CREATE TABLES, INSERT DATAS, Query Optimization 을 진행한다.
 root# cd dbgen
 root# cp makefile.suite makefile
 root# vi makefile
-
-|<br>CC = gcc</br>DATABASE = ORACLE
-MACHINE = LINUX
-WORDLOAD = TPCH|
-|-----|
+      
+      CC = gcc
+      DATABASE = ORACLE
+      MACHINE = LINUX
+      WORDLOAD = TPCH
+      
+      와 같이 수정
