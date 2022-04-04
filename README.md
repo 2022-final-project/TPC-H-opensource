@@ -13,7 +13,9 @@ CREATE TABLES, INSERT DATAS, Query Optimization 을 진행한다.
 # 설치 과정
 
 root# cd dbgen
+
 root# cp makefile.suite makefile
+
 root# vi makefile
       
       CC = gcc
@@ -21,4 +23,4 @@ root# vi makefile
       MACHINE = LINUX
       WORDLOAD = TPCH
       
-      와 같이 수정
+  와 같이 수정
