@@ -12,11 +12,11 @@ CREATE TABLES, INSERT DATAS, Query Optimization 을 진행한다.
 
 # 설치 과정
 
-|root# cd dbgen|
-|-----|
-|root# cp makefile.suite makefile|
-|-----|
-|root# vi makefile|
+> root# cd dbgen
+
+> root# cp makefile.suite makefile
+
+> root# vi makefile
       
       CC = gcc
       DATABASE = ORACLE
