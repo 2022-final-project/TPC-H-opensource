@@ -10,3 +10,15 @@ CREATE TABLES, INSERT DATAS, Query Optimization 을 진행한다.
 |-----|
 |22개의 쿼리에는 postgreSQL에서 실행할 수 없는 형태의 쿼리들이 담겨있다|
 
+# 설치 과정
+
+root# cd dbgen
+root# cp makefile.suite makefile
+root# vi makefile
+
+|-----|
+|CC = gcc|
+|DATABASE = ORACLE|
+|MACHINE = LINUX|
+|WORDLOAD = TPCH|
+|-----|
