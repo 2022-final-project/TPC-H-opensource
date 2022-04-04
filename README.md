@@ -71,6 +71,8 @@ CREATE TABLES, INSERT DATAS, Query Optimization 을 진행한다.
 
 > psql$ COPY lineitem FROM '/절대경로/TPC-H_Tools_v3.0.0/dbgen/lineitem.csv' WITH (FORMAT csv, DELIMITER '|');
 
+## postgres 종료 후 PRIMARY KEY생성 및 테이블 간 관계 설정 (FK)
+
 > PRESS ctrl + z
 
 > postgres# psql tpch < tpch-pkeys.sql
