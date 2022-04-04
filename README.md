@@ -24,3 +24,33 @@ root# vi makefile
       WORDLOAD = TPCH
       
   와 같이 수정
+  
+root# make
+
+root# ./dbgen -s 10
+
+      뒤 숫자의 크기로 Data 들의 개수를 정할 수 있다.
+      
+root# for i in `ls *.tbl`; do sed 's/|$//' $i > ${i/tbl/csv}; echo $i; done
+
+      "*.tbl" 파일들을 "*csv" 파일로 변경하면서 가장 마지막 Delimiter 인 | 를 제거한다.
+      
+root# su postgres
+
+postgres# createdb tpch
+
+postgres# git clone https://github.com/tvondra/pg_tpch.git
+
+postgres# cd dss
+      
+      방금 깃클론 사이트에 들어가보면 pg_tpch/dss directory 가 있다.
+      
+postgres# psql tpch < tpch-create.sql
+
+      8개의 테이블들을 생성한다.
+      
+postgres# psql -d tpch
+
+      postgres 상에 진입하게 된다.
+
+psql$ 
