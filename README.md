@@ -16,8 +16,8 @@ root# cd dbgen
 root# cp makefile.suite makefile
 root# vi makefile
 
-|CC = gcc|
-|DATABASE = ORACLE|
-|MACHINE = LINUX|
-|WORDLOAD = TPCH|
+|CC = gcc
+DATABASE = ORACLE
+MACHINE = LINUX
+WORDLOAD = TPCH|
 |-----|
