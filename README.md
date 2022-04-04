@@ -31,7 +31,7 @@ CREATE TABLES, INSERT DATAS, Query Optimization 을 진행한다.
 
       뒤 숫자의 크기로 Data 들의 개수를 정할 수 있다.
       
-> root# for i in `ls *.tbl`; do sed 's/|$//' $i > ${i/tbl/csv}; echo $i; done
+> root# for i in ``ls *.tbl``; do sed 's/|$//' $i > ${i/tbl/csv}; echo $i; done
 
       "*.tbl" 파일들을 "*csv" 파일로 변경하면서 가장 마지막 Delimiter 인 | 를 제거한다.
       
